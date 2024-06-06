@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eri Bank</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/0bedb91e7e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="account-summary box">
+        <div class="balance">
+          <span>Balance: </span><span id="balance"></span>
+        </div>
+        <div class="summary">
+          <div class="account-info">
+            <h3 class="card-title">Account Summary</h3>
+            <div class="card-body">
+              <span><strong>Account Type: </strong></span
+              ><span id="account-type"></span><br />
+              <span><strong>Sort Code: </strong></span
+              ><span id="sort-code"></span><br />
+              <span><strong>Account Number: </strong></span
+              ><span id="account-number"></span><br />
+            </div>
+          </div>
+          <div class="logo">
+            <img
+              src="images/EriBank.png"
+              alt="Eri Bank Logo"
+              style="width: 150px"
+            />
+            <button class="btn" onclick="openModal('modal-1')">
+              Add Account
+            </button>
+            <button class="btn" onclick="openModal('modal-2')">Add User</button>
+          </div>
+          <div class="user-info">
+            <h3 class="card-title">Account Holder</h3>
+            <div class="card-body">
+              <span><strong>Name: </strong></span><span id="fullname"></span
+              ><br />
+              <span><strong>Email: </strong></span><span id="email"></span
+              ><br />
+              <span><strong>Telephone: </strong></span><span id="tel"></span
+              ><br />
+              <span><strong>Address: </strong></span><br /><span
+                id="address"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="account-actions box">
+        <div class="actions-container">
+          <div class="action-search">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search by account number"
+            />
+            <button class="btn-find">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="btn">All Users</button>
+          </div>
+          <div>
+            <button class="btn" id="deposit">
+              <i class="fa-solid fa-money-bill-trend-up"></i> Deposit
+            </button>
+            <button class="btn" id="transfer">
+              <i class="fa-solid fa-money-bill-transfer"></i> Transfer
+            </button>
+            <button class="btn" id="withdraw">
+              <i class="fa-solid fa-diagram-predecessor"></i> Withdraw
+            </button>
+            <button class="btn">
+              <i class="fa-solid fa-print"></i> Print Statement
+            </button>
+          </div>
+          <div class="toggle deposit">
+            <fieldset>
+              <legend>Deposit</legend>
+              <div>
+                <label for="depositAmount">Deposit Amount: £</label>
+                <input
+                  type="number"
+                  name="depositAmount"
+                  id="depositAmount"
+                /><br />
+              </div>
+              <div>
+                <button class="btn" id="depositBtn">Deposit</button>
+              </div>
+            </fieldset>
+          </div>
+          <div class="toggle transfer">
+            <fieldset>
+              <legend>Transfer</legend>
+              <div>
+                <label for="source-account">Source Account:</label>
+                <select name="source-account" id="source-account">
+                  <option value="">From</option>
+                  <option value="AC-12301">AC-12301</option>
+                  <option value="AC-262048">AC-262048</option>
+                  <option value="AC-12312">AC-12312</option>
+                  <option value="AC-12345">AC-12345</option>
+                </select>
+              </div>
+              <div>
+                <label for="destination-account">Target Account:</label>
+                <select name="destination-account" id="destination-account">
+                  <option value="">To</option>
+                  <option value="AC-12345">AC-12345</option>
+                  <option value="AC-12312">AC-12312</option>
+                  <option value="AC-262048">AC-262048</option>
+                  <option value="AC-12301">AC-12301</option>
+                </select>
+              </div>
+              <div>
+                <label for="amount">Amount: £</label>
+                <input type="number" name="amount" id="amount" /><br />
+              </div>
+              <div>
+                <button class="btn" id="transeferBtn">Transfer</button>
+              </div>
+            </fieldset>
+          </div>
+          <div class="toggle withdraw">
+            <fieldset>
+              <legend>Withdraw</legend>
+              <div>
+                <label for="withdrawAmount">Withdraw Amount: £</label>
+                <input
+                  type="number"
+                  name="withdrawAmount"
+                  id="withdrawAmount"
+                /><br />
+              </div>
+              <div>
+                <button class="btn" id="withdrawBtn">Withdraw</button>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="account-transactions box">
+        <h3 class="card-title">Transactions</h3>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Source</th>
+            <th>Target</th>
+            <th>Balance</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
