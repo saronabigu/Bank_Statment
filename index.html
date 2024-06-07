@@ -10,7 +10,6 @@
       crossorigin="anonymous"
     ></script>
   </head>
-
   <body>
     <div class="container">
       <div class="account-summary box">
@@ -65,7 +64,7 @@
               id="search"
               placeholder="Search by account number"
             />
-            <button class="btn-find">
+            <button class="btn-find" id="btn-find">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button class="btn">All Users</button>
@@ -96,7 +95,7 @@
                 /><br />
               </div>
               <div>
-                <button class="btn" id="depositBtn">Deposit</button>
+                <button class="btn" id="depositSubmit">Deposit</button>
               </div>
             </fieldset>
           </div>
@@ -107,20 +106,15 @@
                 <label for="source-account">Source Account:</label>
                 <select name="source-account" id="source-account">
                   <option value="">From</option>
-                  <option value="AC-12301">AC-12301</option>
-                  <option value="AC-262048">AC-262048</option>
-                  <option value="AC-12312">AC-12312</option>
-                  <option value="AC-12345">AC-12345</option>
+                  <!-- <option value="AC-123">AC-123</option>
+                  <option value="AC-142">AC-142</option>
+                  <option value="AC-185">AC-185</option> -->
                 </select>
               </div>
               <div>
                 <label for="destination-account">Target Account:</label>
                 <select name="destination-account" id="destination-account">
                   <option value="">To</option>
-                  <option value="AC-12345">AC-12345</option>
-                  <option value="AC-12312">AC-12312</option>
-                  <option value="AC-262048">AC-262048</option>
-                  <option value="AC-12301">AC-12301</option>
                 </select>
               </div>
               <div>
@@ -128,7 +122,7 @@
                 <input type="number" name="amount" id="amount" /><br />
               </div>
               <div>
-                <button class="btn" id="transeferBtn">Transfer</button>
+                <button class="btn" id="transferSubmit">Transfer</button>
               </div>
             </fieldset>
           </div>
@@ -144,7 +138,7 @@
                 /><br />
               </div>
               <div>
-                <button class="btn" id="withdrawBtn">Withdraw</button>
+                <button class="btn" id="withdrawSubmit">Withdraw</button>
               </div>
             </fieldset>
           </div>
@@ -152,15 +146,18 @@
       </div>
       <div class="account-transactions box">
         <h3 class="card-title">Transactions</h3>
-        <table>
-          <tr>
-            <th>Date</th>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Source</th>
-            <th>Target</th>
-            <th>Balance</th>
-          </tr>
+        <table id="transactionsTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Source</th>
+              <th>Target</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
         </table>
       </div>
     </div>
